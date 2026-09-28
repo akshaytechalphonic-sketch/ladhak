@@ -15,5 +15,5 @@ deployment:
     - /bin/cp -R public/thumbs $DEPLOYPATH
     - /bin/cp -R public/uploads $DEPLOYPATH
     - /bin/sed -i "s#__DIR__.'/../storage#__DIR__.'/../../ladhak/storage#g" $DEPLOYPATH/index.php
-    - /bin/sed -i "s#__DIR__.'/../vendor/autoload.php#'/home/indiatourismli41/ladhak/vendor/autoload.php'#g" $DEPLOYPATH/index.php
-    - /bin/sed -i "s#__DIR__.'/../bootstrap/app.php#'/home/indiatourismli41/ladhak/bootstrap/app.php'#g" $DEPLOYPATH/index.php
+    - /bin/sed -i "s#__DIR__.'/../vendor/autoload.php#'/home/indiatourismli41/ladhak/vendor/autoload.php#g" $DEPLOYPATH/index.php
+    - /bin/sed -i "s#__DIR__.'/../bootstrap/app.php#'/home/indiatourismli41/ladhak/bootstrap/app.php#g" $DEPLOYPATH/index.php
