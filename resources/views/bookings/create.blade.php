@@ -122,8 +122,11 @@
                     </div>
                     <div class="card-body p-4">
                         <h5 class="fw-bold mb-1">{{ $room->hotel->name }}</h5>
-                        <p class="text-muted small mb-4 d-flex align-items-center gap-1">
-                            <i class="bi bi-geo-alt icon-sm"></i> {{ $room->hotel->location }}
+                        <p class="text-muted small mb-4 d-flex align-items-center justify-content-between">
+                            <span><i class="bi bi-geo-alt icon-sm text-primary-blue"></i> {{ $room->hotel->location ?: 'Old Chulung Road, Leh, Ladakh' }}</span>
+                            <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="text-primary-blue small text-decoration-none fw-semibold">
+                                <i class="bi bi-geo-alt-fill text-danger"></i> Map
+                            </a>
                         </p>
                         
                         <div class="summary-list d-flex flex-column gap-3 mb-4">
@@ -162,8 +165,8 @@
                 
                 <div class="mt-4 text-center">
                     <p class="text-muted small">Need help with your booking?</p>
-                    <a href="tel:9548436762" class="text-primary-blue fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2">
-                        <i class="bi bi-star icon-sm"></i> Call +91 9548436762
+                    <a href="tel:+919548436762" class="text-primary-blue fw-bold text-decoration-none d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-telephone-fill icon-sm"></i> Call +91 9548436762
                     </a>
                 </div>
             </div>

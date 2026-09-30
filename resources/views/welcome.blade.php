@@ -857,7 +857,7 @@
                                         <div>
                                             <div class="d-flex align-items-center gap-2 mb-2 text-danger small fw-bold"
                                                 style="color: #C90000 !important;">
-                                                <i class="bi bi-geo-alt-fill"></i> {{ $hotel->location }}
+                                                <i class="bi bi-geo-alt-fill"></i> {{ $hotel->location ?: 'Old Chulung Road, Leh, Ladakh' }}
                                             </div>
                                             <h5 class="fw-bold text-dark mb-2">{{ $hotel->name }}</h5>
                                             <p class="text-muted small mb-3" style="line-height: 1.6;">

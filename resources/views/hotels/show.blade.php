@@ -17,14 +17,23 @@
                     @endfor
                 </div>
                 <h1 class="display-3 fw-bold text-white mb-2">{{ $hotel->name }}</h1>
-                <p class="lead text-white opacity-90 mb-4 d-flex align-items-center gap-2">
-                    <i class="bi bi-geo-alt icon-sm text-primary-blue"></i> {{ $hotel->location }}
+                <p class="lead text-white opacity-90 mb-3 d-flex align-items-center gap-2 flex-wrap">
+                    <i class="bi bi-geo-alt icon-sm text-primary-blue"></i>
+                    <span>{{ $hotel->location ?: 'Old Chulung Road, Leh, Ladakh, 194101' }}</span>
+                    <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="badge bg-white text-dark text-decoration-none px-3 py-2 rounded-pill fw-bold small ms-md-2 shadow-sm d-inline-flex align-items-center gap-1">
+                        <i class="bi bi-geo-alt-fill text-danger"></i> View on Google Maps
+                    </a>
                 </p>
-                @if($hotel->managed_by)
-                    <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold small">
-                        <i class="bi bi-shield-check icon-sm text-primary-blue me-1"></i> Managed by {{ $hotel->managed_by }}
-                    </span>
-                @endif
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                    @if($hotel->managed_by)
+                        <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold small">
+                            <i class="bi bi-shield-check icon-sm text-primary-blue me-1"></i> Managed by {{ $hotel->managed_by }}
+                        </span>
+                    @endif
+                    <a href="tel:+919548436762" class="badge bg-primary-blue text-white text-decoration-none px-3 py-2 rounded-pill fw-bold small d-inline-flex align-items-center gap-1 shadow-sm">
+                        <i class="bi bi-telephone-fill"></i> Call +91 9548436762
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -142,16 +151,18 @@
                     </div>
                 @endif
 
-                <!-- Map -->
-                @if($hotel->map_embed_url)
-                    <div class="mb-5">
-                        <h4 class="fw-bold mb-4">Location Map</h4>
-                        <div class="rounded-5 overflow-hidden shadow-sm border" style="height: 400px;">
-                            <iframe src="{{ $hotel->map_embed_url }}" width="100%" height="100%" style="border:0;"
-                                allowfullscreen="" loading="lazy"></iframe>
-                        </div>
+                <!-- Hotel Location Link -->
+                <div class="mb-5 p-4 rounded-4 bg-light border d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div>
+                        <h5 class="fw-bold mb-1 d-flex align-items-center gap-2">
+                            <i class="bi bi-geo-alt-fill text-danger"></i> Hotel Location
+                        </h5>
+                        <p class="text-muted small mb-0">{{ $hotel->location ?: 'Old Chulung Road, Leh, Ladakh, 194101' }}</p>
                     </div>
-                @endif
+                    <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="btn btn-primary-blue rounded-pill px-4 py-2 fw-bold small">
+                        <i class="bi bi-geo-alt-fill me-1"></i> View Hotel Location Link <i class="bi bi-box-arrow-up-right ms-1"></i>
+                    </a>
+                </div>
 
                 <!-- Gallery -->
                 @if(!empty($hotel->images) && count($hotel->images) > 1)
@@ -225,8 +236,23 @@
                         </div>
                     </div>
 
+                    <!-- Hotel Contact & Location -->
+                    <div class="mt-4 p-4 rounded-5 bg-white border border-primary-blue border-opacity-10 shadow-sm">
+                        <h6 class="fw-bold mb-3 d-flex align-items-center gap-2">
+                            <i class="bi bi-telephone-fill text-primary-blue"></i> Contact Hotel
+                        </h6>
+                        <div class="d-grid gap-2">
+                            <a href="tel:919548436762" class="btn btn-primary-blue rounded-pill fw-bold py-2 d-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-telephone-fill"></i> 919548436762
+                            </a>
+                            <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary-blue rounded-pill fw-bold py-2 small d-flex align-items-center justify-content-center gap-2">
+                                <i class="bi bi-geo-alt-fill text-danger"></i> Hotel Location Link
+                            </a>
+                        </div>
+                    </div>
+
                     <div
-                        class="mt-4 p-4 rounded-5 bg-white border border-primary-blue border-opacity-10 d-flex gap-3 align-items-center">
+                        class="mt-3 p-4 rounded-5 bg-white border border-primary-blue border-opacity-10 d-flex gap-3 align-items-center">
                         <div class="bg-primary-blue bg-opacity-10 rounded-circle p-3 text-primary-blue">
                             <i class="bi bi-gift icon-md"></i>
                         </div>

@@ -47,8 +47,11 @@
                     </div>
                 </div>
                 <div class="card-body p-4">
-                    <div class="d-flex align-items-center gap-2 mb-2 text-primary-blue small fw-bold">
-                        <i class="bi bi-geo-alt icon-sm"></i> {{ $hotel->location }}
+                    <div class="d-flex align-items-center justify-content-between mb-2 small fw-bold">
+                        <span class="text-primary-blue text-truncate"><i class="bi bi-geo-alt icon-sm"></i> {{ $hotel->location ?: 'Old Chulung Road, Leh, Ladakh' }}</span>
+                        <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-muted flex-shrink-0 ms-2" title="View Location on Map">
+                            <i class="bi bi-geo-alt-fill text-danger"></i> Map
+                        </a>
                     </div>
                     <h6 class="fw-bold mb-3">{{ $hotel->name }}</h6>
                     <p class="text-muted small mb-4 line-clamp-3">{{ strip_tags($hotel->description) }}</p>
@@ -68,13 +71,18 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center gap-2">
                         <div>
                             <span class="text-muted small d-block">Starting from</span>
                             <span class="h4 fw-bold mb-0 text-primary-blue">₹{{ rand(2999, 5999) }}</span>
                             <small class="text-muted">/night</small>
                         </div>
-                        <a href="{{ route('hotels.show', $hotel) }}" class="btn btn-primary-blue rounded-pill px-4">View Details</a>
+                        <div class="d-flex gap-2">
+                            <a href="tel:+919548436762" class="btn btn-outline-primary-blue rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;" title="Call +91 9548436762">
+                                <i class="bi bi-telephone-fill"></i>
+                            </a>
+                            <a href="{{ route('hotels.show', $hotel) }}" class="btn btn-primary-blue rounded-pill px-4">View Details</a>
+                        </div>
                     </div>
                 </div>
             </div>

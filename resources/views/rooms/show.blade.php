@@ -62,9 +62,12 @@
             <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
                 <div>
                     <h1 class="display-5 fw-bold mb-2">{{ $room->room_type }}</h1>
-                    <p class="text-muted mb-0 d-flex align-items-center gap-2">
+                    <p class="text-muted mb-0 d-flex align-items-center gap-2 flex-wrap">
                         <i class="bi bi-geo-alt icon-sm text-primary-blue"></i>
-                        {{ $room->hotel->name ?? '' }} &bull; {{ $room->hotel->location ?? '' }}
+                        <span>{{ $room->hotel->name ?? '' }} &bull; {{ $room->hotel->location ?? 'Old Chulung Road, Leh, Ladakh' }}</span>
+                        <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="badge bg-light text-primary-blue text-decoration-none px-2 py-1 rounded-pill small">
+                            <i class="bi bi-geo-alt-fill text-danger me-1"></i> Map
+                        </a>
                     </p>
                 </div>
                 <div class="d-flex gap-2">
@@ -220,7 +223,15 @@
                         </div>
                     </div>
                     <p class="text-muted small mb-4">{{ Str::limit(strip_tags($room->hotel->description), 120) }}</p>
-                    <a href="{{ route('hotels.show', $room->hotel_id) }}" class="btn btn-outline-primary-blue w-100 rounded-pill small fw-bold">Explore Property</a>
+                    <div class="d-grid gap-2">
+                        <a href="{{ route('hotels.show', $room->hotel_id) }}" class="btn btn-outline-primary-blue rounded-pill small fw-bold">Explore Property</a>
+                        <a href="tel:+919548436762" class="btn btn-primary-blue rounded-pill small fw-bold d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-telephone-fill"></i> Call +91 9548436762
+                        </a>
+                        <a href="https://share.google/omQCThQtn3oRHiPum" target="_blank" rel="noopener noreferrer" class="btn btn-light rounded-pill small fw-bold text-dark border d-flex align-items-center justify-content-center gap-2">
+                            <i class="bi bi-geo-alt-fill text-danger"></i> View Hotel Location
+                        </a>
+                    </div>
                 </div>
                 @endif
             </div>
