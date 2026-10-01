@@ -378,7 +378,10 @@ class PublicController extends Controller
             $query->where('difficulty', $request->difficulty);
         }
 
-        $packages = $query->latest()->paginate(9)->appends($request->query());
+        $packages = $query
+            ->orderByRaw('CAST(duration AS UNSIGNED) ASC')
+            ->paginate(9)
+            ->appends($request->query());
         $destinations = Destination::where('status', true)->get();
         $services = Service::where('status', true)->get();
 

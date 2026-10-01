@@ -142,9 +142,9 @@
     $heroBg = $banner && $banner->image
         ? asset('storage/'.$banner->image)
         : '';
-    $address  = $banner->extra_data['Our Presence'] ?? 'Leh, Ladakh, India';
-    $phones   = explode(',', $banner->extra_data['Direct Line'] ?? '+91 80767 82128');
-    $email    = $banner->extra_data['email'] ?? 'info@ladakhtourism.com';
+    $address  = $banner->extra_data['Our Presence'] ?? ($settings->address ?? 'Chulung, Old Leh Rd, Leh, Ladakh 194101');
+    $phones   = explode(',', $banner->extra_data['Direct Line'] ?? ($settings->contact_phone ? $settings->contact_phone . ($settings->phone_two ? ', ' . $settings->phone_two : '') : '+91 9548436762'));
+    $email    = $banner->extra_data['email'] ?? ($settings->contact_email ?? 'info@lehladakhtrips.com');
 @endphp
 
 {{-- ===== HERO ===== --}}
@@ -315,11 +315,11 @@
                         <h5 class="text-white fw-bold mb-1">Visit Our Office</h5>
                         <p class="text-white mb-3" style="opacity:0.8; font-size:0.88rem;">{{ $address }}</p>
                         <div class="d-flex gap-3">
-                            <a href="https://wa.me/918076782128" target="_blank"
+                            <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $settings->whatsapp_number ?? '919548436762') }}" target="_blank"
                                class="btn btn-sm fw-bold rounded-pill px-4" style="background:#25D366; color:#fff; border:none;">
                                 <i class="bi bi-whatsapp me-1"></i>WhatsApp
                             </a>
-                            <a href="tel:+918076782128"
+                            <a href="tel:{{ str_replace(' ', '', $settings->contact_phone ?? '+919548436762') }}"
                                class="btn btn-sm fw-bold rounded-pill px-4" style="background:#C90000; color:#fff; border:none;">
                                 <i class="bi bi-telephone me-1"></i>Call Now
                             </a>

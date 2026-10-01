@@ -234,8 +234,8 @@
                 <div class="quick-contact">
                     <h6 class="fw-bold mb-1" style="font-size:0.88rem;">Plan Your Ladakh Trip</h6>
                     <p style="font-size:0.78rem; opacity:0.65; margin-bottom:14px;">Free consultation with our travel experts.</p>
-                    <a href="tel:+918076782128" class="btn w-100 fw-bold rounded-pill mb-2" style="background:#C90000; color:#fff; border:none; font-size:0.82rem; padding:9px;">
-                        <i class="bi bi-telephone me-2"></i>+91 80767 82128
+                    <a href="tel:{{ str_replace(' ', '', $settings->contact_phone ?? '+919548436762') }}" class="btn w-100 fw-bold rounded-pill mb-2" style="background:#C90000; color:#fff; border:none; font-size:0.82rem; padding:9px;">
+                        <i class="bi bi-telephone me-2"></i>{{ $settings->contact_phone ?? '+91 9548436762' }}
                     </a>
                     <a href="{{ route('contact') }}" class="btn w-100 fw-bold rounded-pill" style="background:rgba(255,255,255,0.1); color:#fff; border:1px solid rgba(255,255,255,0.25); font-size:0.82rem; padding:9px;">
                         <i class="bi bi-chat me-2"></i>Send a Message

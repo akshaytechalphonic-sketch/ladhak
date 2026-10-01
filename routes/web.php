@@ -67,8 +67,9 @@ Route::get('/testimonials', [PublicController::class, 'testimonials'])->name('te
 Route::get('/destinations', [PublicController::class, 'destinations'])->name('destinations.index');
 Route::get('/destinations/{slug}', [PublicController::class, 'destinationDetails'])->name('destinations.show');
 
-Route::get('/create-order',[RazorpayController::class,'paymentform'])->name('payment.form');
-Route::post('create-order',[RazorpayController::class,'createOrder'])->name('razorpay.createOrder');
+Route::get('/payment', [RazorpayController::class, 'paymentform'])->name('payment');
+Route::get('/create-order', [RazorpayController::class, 'paymentform'])->name('payment.form');
+Route::post('create-order', [RazorpayController::class, 'createOrder'])->name('razorpay.createOrder');
 Route::post('/payment-success', [RazorpayController::class, 'paymentSuccess'])->name('razorpay.success');
 Route::get('/thank-you', [RazorpayController::class, 'thank_you'])->name('thank-you');
 

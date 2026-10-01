@@ -71,18 +71,16 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center gap-2">
-                        <div>
-                            <span class="text-muted small d-block">Starting from</span>
-                            <span class="h4 fw-bold mb-0 text-primary-blue">₹{{ rand(2999, 5999) }}</span>
-                            <small class="text-muted">/night</small>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <a href="tel:+919548436762" class="btn btn-outline-primary-blue rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px;" title="Call +91 9548436762">
-                                <i class="bi bi-telephone-fill"></i>
-                            </a>
-                            <a href="{{ route('hotels.show', $hotel) }}" class="btn btn-primary-blue rounded-pill px-4">View Details</a>
-                        </div>
+                    <div class="d-flex gap-2 mt-auto">
+                        <a href="tel:+919548436762"
+                           class="btn btn-outline-primary-blue rounded-circle d-flex align-items-center justify-content-center flex-shrink-0"
+                           style="width: 42px; height: 42px;" title="Call +91 9548436762">
+                            <i class="bi bi-telephone-fill"></i>
+                        </a>
+                        <a href="{{ route('hotels.show', $hotel) }}"
+                           class="btn btn-primary-blue rounded-pill fw-bold flex-grow-1">
+                            View Details
+                        </a>
                     </div>
                 </div>
             </div>

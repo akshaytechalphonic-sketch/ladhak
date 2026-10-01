@@ -201,11 +201,7 @@
                                                     class="w-100 h-100 object-fit-cover" alt="{{ $room->room_type }}">
                                             </div>
                                         @endif
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <h6 class="fw-bold mb-0">{{ $room->room_type }}</h6>
-                                            <span class="fw-bold text-primary-blue">₹{{ number_format($room->price, 0) }}<small
-                                                    class="text-muted">/nt</small></span>
-                                        </div>
+                                        <h6 class="fw-bold mb-2">{{ $room->room_type }}</h6>
                                         <div class="d-flex flex-wrap gap-2 mb-3">
                                             @if($room->bed_type)<span
                                                 class="badge bg-light text-dark border-0 small px-2 py-1"><i

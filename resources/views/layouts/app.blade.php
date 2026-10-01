@@ -465,7 +465,7 @@
                             </a>
                             @endif
                             <span class="d-flex align-items-center gap-2" style="color:rgba(255,255,255,0.65);">
-                                <i class="bi bi-geo-alt-fill" style="color:#C90000;"></i> {{ $settings->address ?? 'Leh, Ladakh, India' }}
+                                <i class="bi bi-geo-alt-fill" style="color:#C90000;"></i> {{ $settings->address ?? 'Chulung, Old Leh Rd, Leh, Ladakh 194101' }}
                             </span>
                         </div>
                         <!-- Social links -->
