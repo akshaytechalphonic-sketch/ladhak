@@ -75,6 +75,10 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        // Live server: document root is public_html, not public/.
+        // Running `php artisan storage:link` on the server will also create
+        // /home/indiatourismli41/public_html/storage → storage/app/public
+        base_path('../public_html/storage') => storage_path('app/public'),
     ],
 
 ];
