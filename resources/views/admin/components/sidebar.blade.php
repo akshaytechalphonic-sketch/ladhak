@@ -2,7 +2,9 @@
     <div class="sidebar-header p-4 d-flex align-items-center">
        <div>
 
-            <img src="{{ asset('storage/logo.png') }}" alt="Ladakh Tourism Logo" style="height: 50px;">
+            <img src="{{ $settings->site_logo ? asset('storage/'.$settings->site_logo) : asset('storage/logo.png') }}"
+                 alt="{{ $settings->site_name ?? 'Ladakh Tourism' }} Logo"
+                 style="height: 50px; object-fit: contain;">
         </div>
     </div>
     
