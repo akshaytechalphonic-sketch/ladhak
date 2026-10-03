@@ -80,6 +80,7 @@ Route::post('/packages/{package}/enquire', [PublicController::class, 'storePacka
 
 Route::get('/privacy-policy', [PublicController::class, 'privacyPolicy'])->name('privacy-policy');
 Route::get('/terms-and-conditions', [PublicController::class, 'termsConditions'])->name('terms-conditions');
+Route::get('/cancellation-policy', [PublicController::class, 'cancellationPolicy'])->name('cancellation-policy');
 Route::get('/faq', [PublicController::class, 'faq'])->name('faq');
 
 // Project Management System UI Routes

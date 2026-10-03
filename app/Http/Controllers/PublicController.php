@@ -355,6 +355,14 @@ class PublicController extends Controller
         return view('terms-conditions', compact('page', 'sections'));
     }
 
+    public function cancellationPolicy()
+    {
+        $page = Page::where('slug', 'cancellation-policy')->first();
+       
+        $sections = $page ? $page->sections()->where('status', true)->get()->keyBy('section_name') : collect();
+        return view('cancellation-policy', compact('page', 'sections'));
+    }
+
     public function faq()
     {
         $page = Page::where('slug', 'faq')->first();

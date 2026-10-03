@@ -515,6 +515,7 @@
                             <li><a href="{{ route('faq') }}" class="footer-link">FAQs</a></li>
                             <li><a href="{{ route('privacy-policy') }}" class="footer-link">Privacy Policy</a></li>
                             <li><a href="{{ route('terms-conditions') }}" class="footer-link">Terms & Conditions</a></li>
+                            <li><a href="{{ route('cancellation-policy') }}" class="footer-link">Cancellation & Refund Policy</a></li>
                         </ul>
                     </div>
 
